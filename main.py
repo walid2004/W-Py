@@ -1,5 +1,9 @@
 #starting a new arch
+import math
 class wpy:
+    def __new__(cls):
+        pass
+        
     def __init__(self):
         self.name= 'wpy'
         self.version = '0.0'
@@ -16,8 +20,14 @@ class wpy:
     def entropy(self, dataset):
         k= self.unique_Values(dataset)
         n= len(dataset)
+        entropy_sum =0
         for value in k.keys:
             probability = k[value]/n
-            
+            log = math.log(2,probability)
+            entropy_sum -= probability*log
+        return entropy_sum
+    
+
+
 
         
