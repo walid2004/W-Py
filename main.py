@@ -1,9 +1,10 @@
 #starting a new arch
 import math
 class wpy:
-    def __new__(cls):
-        pass
-        
+    def __new__(cls, *args, **kwargs):
+        instance = super().__new__(cls)
+        return instance
+    
     def __init__(self):
         self.name= 'wpy'
         self.version = '0.0'
@@ -11,7 +12,7 @@ class wpy:
     def unique_Values(self, dataset):
         unique={}
         for i in dataset:
-            if i in unique.values:
+            if i in unique.values():
                 unique[i]+=1
             else:
                 unique[i]=1
